@@ -12,3 +12,6 @@ FROM mcr.microsoft.com/azure-functions/dotnet-isolated:4-dotnet-isolated8.0
 WORKDIR /home/site/wwwroot
 
 COPY --from=build /app/publish .
+
+ENV AzureWebJobsScriptRoot=/home/site/wwwroot
+ENV AzureFunctionsJobHost__Logging__Console__IsEnabled=true
